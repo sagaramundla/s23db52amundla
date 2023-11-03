@@ -1,0 +1,39 @@
+extends layout
+
+
+
+
+
+block content
+  h1= title
+  -
+    let results = [
+      {
+        "Author": "Harper Lee",
+        "book_name": "To Kill a Mockingbird",
+        "book_cost": 1000
+      },
+      {
+        "Author": "F. Scott Fitzgerald",
+        "book_name": "The Great Gatsby",
+        "book_cost": 2000
+      },
+      {
+        "Author": "J.D. Salinger",
+        "book_name": "The Catcher in the Rye",
+        "book_cost": 3000
+      },                   
+    ]
+  div(class= "container-fluid")
+    div(class = "row")
+      each item,index in results
+        div(class= "col-sm-2", onclick=`buy(${index})`) Author: #{item.Author}
+        div(class= "col-sm-2", onclick=`buy(${index})`) book_name: #{item.book_name}
+        div(class= "col-sm-2", onclick=`buy(${index})`) book_cost: #{item.book_cost}
+        br
+        br
+        
+  script.
+    function buy(itemNum){
+      alert(`You purchased item ${itemNum+1}`)
+    }

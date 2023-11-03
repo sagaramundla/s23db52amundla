@@ -1,0 +1,21 @@
+extends layout
+block content
+  h1= title
+  p Rows: #{query.rows}, Columns: #{query.cols}
+  - var rows=Number(query.rows);
+  - var cols=Number(query.cols);
+  if !Number.isInteger(rows)
+      p Invalid input. Please provide integer values for rows and columns within the range of 1 to 10.
+  else if !Number.isInteger(cols)
+      p Invalid input. Please provide integer values for rows and columns within the range of 1 to 10.
+  else if rows<1||rows>10
+      p Invalid input. Please provide integer values for rows and columns within the range of 1 to 10.
+  else if cols<1||cols>10
+      p Invalid input. Please provide integer values for rows and columns within the range of 1 to 10.
+  else
+    table#outer
+      - for (let i = 0; i < rows; i++)
+        tr#middle
+          - for (let j = 0; j < cols; j++)
+            - let value = (i === j) ? 1 : (i === j + 1) ? 2 : (i === j - 1) ? i : 0
+            td= value

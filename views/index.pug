@@ -1,0 +1,25 @@
+extends layout
+
+
+
+block content
+  h1= title
+  p Welcome to #{title}
+  p i Love travelling & Exploring the cities.I am a Foodie & movie lover.
+  button(type="button", class="btn btn-secondary" , onclick="goFaster()") Press Me
+  br
+  br
+  br
+  div(id="faster")
+
+  script.
+    var mph = 20;
+    var change = 1;
+
+    function goFaster() {
+        mph = mph + change;
+        change = change + 1;
+        document.getElementById("faster").innerHTML = "Increase the speed by " +"Change  "+ change +   " MPH "+ mph;
+    }
+
+
