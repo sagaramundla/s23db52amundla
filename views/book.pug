@@ -22,14 +22,13 @@ block content
         "Author": "J.D. Salinger",
         "book_name": "The Catcher in the Rye",
         "book_cost": 3000
-      },                   
-    ]
-  div(class= "container-fluid")
-    div(class = "row")
+      },                  ]
+  div.container-fluid
+    div.row
       each item,index in results
-        div(class= "col-sm-2", onclick=`buy(${index})`) Author: #{item.Author}
-        div(class= "col-sm-2", onclick=`buy(${index})`) book_name: #{item.book_name}
-        div(class= "col-sm-2", onclick=`buy(${index})`) book_cost: #{item.book_cost}
+        div.col-sm-2(onclick=`buy(${index})`) #{item.Author}
+        div.col-sm-2(onclick=`buy(${index})`) #{item.book_name}
+        div.col-sm-2(onclick=`buy(${index})`) #{item.book_cost}
         br
         br
         
