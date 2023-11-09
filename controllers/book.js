@@ -19,3 +19,16 @@ res.send('NOT IMPLEMENTED: book delete DELETE ' + req.params.id);
 exports.book_update_put = function(req, res) {
 res.send('NOT IMPLEMENTED: book update PUT' + req.params.id);
 };
+
+// List of all book
+exports.book_list = async function(req, res) {
+    try{
+    thebook = await book.find();
+    res.send(thebook);
+    }
+    catch(err){
+    res.status(500);
+    res.send(`{"error": ${err}}`);
+    }
+    };
+    
