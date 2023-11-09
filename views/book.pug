@@ -7,25 +7,10 @@ extends layout
 block content
   h1= title
   -
-    let results = [
-      {
-        "Author": "Harper Lee",
-        "book_name": "To Kill a Mockingbird",
-        "book_cost": 1000
-      },
-      {
-        "Author": "F. Scott Fitzgerald",
-        "book_name": "The Great Gatsby",
-        "book_cost": 2000
-      },
-      {
-        "Author": "J.D. Salinger",
-        "book_name": "The Catcher in the Rye",
-        "book_cost": 3000
-      },                  ]
+    let items = results;
   div.container-fluid
     div.row
-      each item,index in results
+      each item,index in items
         div.col-sm-2(onclick=`buy(${index})`) #{item.Author}
         div.col-sm-2(onclick=`buy(${index})`) #{item.book_name}
         div.col-sm-2(onclick=`buy(${index})`) #{item.book_cost}

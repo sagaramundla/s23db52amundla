@@ -31,4 +31,18 @@ exports.book_list = async function(req, res) {
     res.send(`{"error": ${err}}`);
     }
     };
+
+    // VIEWS
+// Handle a show all view
+exports.book_view_all_Page = async function(req, res) {
+    try{
+    thebook = await book.find();
+    res.render('book', { title: 'book Search Results', results: thebook });
+    }
+    catch(err){
+    res.status(500);
+    res.send(`{"error": ${err}}`);
+    }
+    };
+   
     
