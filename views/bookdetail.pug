@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  h1= title
+  if (toShow == null)
+   h2 No instance to detail
+  else
+  - let bookid = toShow._id
+  - let Author = toShow.Author
+  - let book_name = toShow.book_name
+  - let book_cost= toShow.book_cost
+
+  div
+    div.row
+      div(class='bookAttr mr-4') book ID is:
+      div #{bookid}
+
+    div.row
+      div(class='bookAttr mr-4')  Author is:
+      div #{Author}
+
+    div.row
+      div(class='bookAttr mr-4') book_name is:
+      div #{book_name}
+
+    div.row
+      div(class='bookAttr mr-4') book_cost:
+      div #{book_cost}
