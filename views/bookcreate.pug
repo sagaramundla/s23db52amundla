@@ -4,13 +4,13 @@ block content
   h1= title
   form(id='bookForm', action="/resource/book", method="POST")
     div.form-group-create
-      label.bookAttr(for='Author') book_Author
+      label.bookAttr1(for='Author') book_Author
       input#book_Name(type='text', name='Author')
     div.form-group-create
-      label.bookAttr(for='book_name') book_name 
+      label.bookAttr2(for='book_name') book_name 
       input#book_Age(type='text', name='book_name')
     div.form-group-create
-      label.bookAttr(for='book_cost') book_cost
+      label.bookAttr3(for='book_cost') book_cost
       input#book_color(type='number', name='book_cost')
     input(type="submit")
     script.

@@ -8,7 +8,20 @@ a {
 }
 
 .bookAttr {
-  background-color: orange;
+  background-color:aquamarine ;
   width: 120px;
   }
+
+.bookAttr1 {
+    background-color: rgb(51, 0, 255);
+    width: 120px;
+    }
+.bookAttr2 {
+      background-color: rgb(255, 0, 0);
+      width: 120px;
+      }
+      .bookAttr3{
+        background-color:orange;
+        width: 120px;
+        }
   
