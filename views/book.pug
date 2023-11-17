@@ -1,22 +1,26 @@
 extends layout
 
-
-
-
-
 block content
   h1= title
   -
     let items = results;
   div.container-fluid
     div.row
-      each item,index in items
+      each item, index in items
         div.col-sm-2(onclick=`buy(${index})`) #{item.Author}
         div.col-sm-2(onclick=`buy(${index})`) #{item.book_name}
         div.col-sm-2(onclick=`buy(${index})`) #{item.book_cost}
-        br
-        br
-        
+        - let destination = `/book/update?id=${item._id}` // Fix variable name and template string
+        div.col-sm-2(onclick=`buy(${item})`) #{item.Author}, #{item.book_name}, #{item.book_cost} // Fix variable name
+        button.btn(class="btn-primary ml-1", onclick=`dispatch('${destination}')`) Update
+  script.
+    function buy(index) {
+      alert(`You purchased Item ${items[index].NAME}`); // Fix the alert message
+    }
+    function dispatch(path) {
+      window.location.href = path;
+    }
+
   script.
     function buy(itemNum){
       alert(`You purchased item ${itemNum+1}`)
